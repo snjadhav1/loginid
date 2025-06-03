@@ -1,9 +1,7 @@
-runtime: python312  # Or the latest supported runtime
+runtime: python39
+entrypoint: gunicorn -b :$PORT main:app
 
 handlers:
-  - url: /
-    static_files: login.html
-    upload: login.html
-  - url: /(.*)
-    static_files: \1
-    upload: (.*)
+- url: /
+  static_files: index.html
+  upload: index.html
