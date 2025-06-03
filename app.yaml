@@ -1,1 +1,9 @@
-runtime: python312
+runtime: python312  # Or the latest supported runtime
+
+handlers:
+  - url: /
+    static_files: login.html
+    upload: login.html
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
